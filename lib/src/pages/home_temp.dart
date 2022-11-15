@@ -34,8 +34,18 @@ class HomePageTemp extends StatelessWidget {
   List<Widget> _itemListToWidgetListShortVersion() {
     //using the map operator
     return options.map((String item) {
-      return ListTile(title: Text(item));
+      return Column(
+        children: [
+          ListTile(
+            title: Text(item),
+            subtitle: Text("a subtitle example"),
+            leading: Icon(Icons.headphones), //first icon
+            trailing: Icon(Icons.keyboard_arrow_right), //last icon
+            onTap: () {}, //method on click on list item
+          ),
+          const Divider(color: Colors.blue)
+        ],
+      );
     }).toList();
-
   }
 }
