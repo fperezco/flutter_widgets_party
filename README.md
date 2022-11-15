@@ -1,6 +1,6 @@
 # flutter_widgets_party
 
-A new Flutter project.
+Just playing with different widgets
 
 ## Getting Started
 
