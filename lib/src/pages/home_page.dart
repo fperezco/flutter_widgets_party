@@ -41,7 +41,9 @@ class HomePage extends StatelessWidget {
           title: Text(item['texto']),
           leading: getIcon(item['icon']),
           trailing: Icon(Icons.keyboard_arrow_right),
-          onTap: () {},
+          onTap: () {
+            
+          },
         );
         options..add(tempWidget)
                 ..add(Divider());
