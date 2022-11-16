@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets_party/src/pages/alert_page.dart';
 import 'package:flutter_widgets_party/src/providers/menu_provider.dart';
 import 'package:flutter_widgets_party/src/utils/icon_string_util.dart';
 
@@ -24,8 +23,7 @@ class HomePage extends StatelessWidget {
         //when I am requesting data
         //when I retrive the data
         //when a fail happens
-
-        print(snapshot.data);
+        //print(snapshot.data);
         return ListView(
           children: _itemsList(snapshot.data, context),
         );
@@ -33,8 +31,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  List<Widget> _itemsList(
-      List<dynamic>? optionItemsList, BuildContext context) {
+  List<Widget> _itemsList(List<dynamic>? optionItemsList, BuildContext context) {
     final List<Widget> options = [];
 
     if (optionItemsList != null) {
