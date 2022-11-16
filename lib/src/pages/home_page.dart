@@ -44,11 +44,8 @@ class HomePage extends StatelessWidget {
           leading: getIcon(item['icon']),
           trailing: Icon(Icons.keyboard_arrow_right),
           onTap: () {
-            //go to other page
-            final route = MaterialPageRoute(
-              builder: (context) => AlertPage()
-              );
-            Navigator.push(context, route);
+            //go to other route by name, defined in main.dart
+            Navigator.pushNamed(context, item['ruta']);
           },
         );
         options
