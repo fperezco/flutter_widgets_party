@@ -43,7 +43,7 @@ class HomePageTemp extends StatelessWidget {
             trailing: Icon(Icons.keyboard_arrow_right), //last icon
             onTap: () {}, //method on click on list item
           ),
-          const Divider(color: Colors.blue)
+          const Divider()
         ],
       );
     }).toList();
