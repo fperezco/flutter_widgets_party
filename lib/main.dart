@@ -15,13 +15,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      //home:  HomePage(),
       initialRoute: '/',
-      routes: <String,WidgetBuilder>{
+      routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => HomePage(),
-        'alert' : (BuildContext context) => AlertPage(),
-        'avatar' : (BuildContext context) => AvatarPage(),
+        'alert': (BuildContext context) => AlertPage(),
+        'avatar': (BuildContext context) => AvatarPage(),
       },
+      //when the route is not previously defined
+      //return a default page
+      onGenerateRoute: ((RouteSettings settings) {
+        return MaterialPageRoute(builder: (context) => AlertPage());
+      }),
     );
   }
 }
