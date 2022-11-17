@@ -38,8 +38,8 @@ class AlertPage extends StatelessWidget {
               ],
             ),
             actions: [
-              TextButton(child: Text("Cancel"), onPressed: () => Navigator.of(context).pop(), ),
-              TextButton(child: Text("Accept"),  onPressed: () => Navigator.of(context).pop(), ),
+              TextButton(child: Text("Cancel"), onPressed: () => Navigator.of(context).pop() ),
+              TextButton(child: Text("Accept"),  onPressed: () => Navigator.of(context).pop() ),
             ],
           );
         });
