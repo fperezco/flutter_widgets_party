@@ -11,6 +11,10 @@ class _InputPageState extends State<InputPage> {
   String _name = "";
   String _email = "";
   String _password = "";
+  String _date = "";
+
+  // to manage a relationship between a var and an input
+  TextEditingController _inputFieldDateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +28,8 @@ class _InputPageState extends State<InputPage> {
             _createEmail(),
             Divider(),
             _createPassword(),
+            Divider(),
+            _createDate(context),
             Divider(),
             _createPerson()
           ],
@@ -55,13 +61,13 @@ class _InputPageState extends State<InputPage> {
     return ListTile(
       title: Text("The name is: $_name"),
       subtitle: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("The email is: $_email"),
-            Text("The password is: $_password"),
-          ],
-        ),
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("The email is: $_email"),
+          Text("The password is: $_password"),
+        ],
+      ),
     );
   }
 
@@ -94,7 +100,43 @@ class _InputPageState extends State<InputPage> {
             icon: Icon(Icons.lock)),
         onChanged: (value) => setState(() {
               _password = value;
-              print(_email);
+              print(_password);
             }));
+  }
+
+  Widget _createDate(BuildContext context) {
+    return TextField(
+        controller:
+            _inputFieldDateController, //asign the controller to the input
+        enableInteractiveSelection: false,
+        decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+            hintText: "Introduce birth date",
+            helperText: "instructions about the date",
+            label: Text("Birth date"),
+            suffixIcon: Icon(Icons.calendar_today),
+            icon: Icon(Icons.calendar_today)),
+        onTap: () {
+          FocusScope.of(context).requestFocus(
+              new FocusNode()); //remove focus from element when click
+          _selectDate(context);
+        });
+  }
+
+  /** Launch the dialog to select date */
+  void _selectDate(BuildContext context) async {
+    DateTime? pickedDateTime = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2000),
+        lastDate: DateTime(2025));
+
+    if (pickedDateTime != null) {
+      setState(() {
+        _date = pickedDateTime.toString();
+        _inputFieldDateController.text =
+            _date; //to move the value to the input using the controller
+      });
+    }
   }
 }
