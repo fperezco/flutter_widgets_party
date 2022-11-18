@@ -10,7 +10,8 @@ Just playing with different widgets:
 - ListViews and Infinite scrolls
 
 ![Widgets overview](doc_snapshots/global_overview.png?raw=true "Widgets")
-![cards overview](doc_snapshots/cards png?raw=true "Cards")
+![Cards](doc_snapshots/cards.png?raw=true "Cards")
+
 
 ## Getting Started
 
