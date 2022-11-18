@@ -12,6 +12,13 @@ class _InputPageState extends State<InputPage> {
   String _email = "";
   String _password = "";
   String _date = "";
+  List<String> _dropDownStringList = [
+    'option1',
+    'second option',
+    'I am the 3',
+    '4th is mine'
+  ];
+  String? _dropDownSelectedOption = 'I am the 3';
 
   // to manage a relationship between a var and an input
   TextEditingController _inputFieldDateController = TextEditingController();
@@ -30,6 +37,8 @@ class _InputPageState extends State<InputPage> {
             _createPassword(),
             Divider(),
             _createDate(context),
+            Divider(),
+            _createDropdown(),
             Divider(),
             _createPerson()
           ],
@@ -66,6 +75,7 @@ class _InputPageState extends State<InputPage> {
         children: [
           Text("The email is: $_email"),
           Text("The password is: $_password"),
+          Text("The option is: $_dropDownSelectedOption"),
         ],
       ),
     );
@@ -106,7 +116,8 @@ class _InputPageState extends State<InputPage> {
 
   Widget _createDate(BuildContext context) {
     return TextField(
-        controller:_inputFieldDateController, //asign the controller to the input
+        controller:
+            _inputFieldDateController, //asign the controller to the input
         enableInteractiveSelection: false,
         decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
@@ -125,7 +136,7 @@ class _InputPageState extends State<InputPage> {
   /** Launch the dialog to select date */
   void _selectDate(BuildContext context) async {
     DateTime? pickedDateTime = await showDatePicker(
-        locale: Locale("es",'ES'),
+        locale: Locale("es", 'ES'),
         context: context,
         initialDate: DateTime.now(),
         firstDate: DateTime(2000),
@@ -138,5 +149,34 @@ class _InputPageState extends State<InputPage> {
             _date; //to move the value to the input using the controller
       });
     }
+  }
+
+  Widget _createDropdown() {
+    return Row(
+      children: [
+        Icon(Icons.select_all),
+        SizedBox(
+          width: 30.0,
+        ),
+        Expanded(
+            child: DropdownButton(
+                value: _dropDownSelectedOption,
+                items: _dropDownOptionsList(),
+                onChanged: (currentSelectedOption) {
+                  setState(() {
+                    _dropDownSelectedOption = currentSelectedOption;
+                  });
+                  print(currentSelectedOption);
+                }))
+      ],
+    );
+  }
+
+  List<DropdownMenuItem<String>> _dropDownOptionsList() {
+    List<DropdownMenuItem<String>> itemsList = <DropdownMenuItem<String>>[];
+    _dropDownStringList.forEach((item) {
+      itemsList.add(DropdownMenuItem(child: Text(item), value: item));
+    });
+    return itemsList;
   }
 }
