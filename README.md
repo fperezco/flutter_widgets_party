@@ -1,6 +1,13 @@
 # flutter_widgets_party
 
-Just playing with different widgets
+Just playing with different widgets:
+- Alerts
+- Avatars
+- Cards
+- Animated Containers
+- Inputs
+- Sliders
+- ListViews and Infinite scrolls
 
 ## Getting Started
 
