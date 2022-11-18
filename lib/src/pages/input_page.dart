@@ -106,8 +106,7 @@ class _InputPageState extends State<InputPage> {
 
   Widget _createDate(BuildContext context) {
     return TextField(
-        controller:
-            _inputFieldDateController, //asign the controller to the input
+        controller:_inputFieldDateController, //asign the controller to the input
         enableInteractiveSelection: false,
         decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
@@ -126,6 +125,7 @@ class _InputPageState extends State<InputPage> {
   /** Launch the dialog to select date */
   void _selectDate(BuildContext context) async {
     DateTime? pickedDateTime = await showDatePicker(
+        locale: Locale("es",'ES'),
         context: context,
         initialDate: DateTime.now(),
         firstDate: DateTime(2000),
