@@ -9,6 +9,8 @@ Just playing with different widgets:
 - Sliders
 - ListViews and Infinite scrolls
 
+![Alt text](doc_snapshots/global_overview.png?raw=true "Widgets overview")
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
