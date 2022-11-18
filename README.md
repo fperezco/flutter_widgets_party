@@ -9,8 +9,10 @@ Just playing with different widgets:
 - Sliders
 - ListViews and Infinite scrolls
 
-![Widgets overview](doc_snapshots/global_overview.png?raw=true "Widgets")
-![Cards](doc_snapshots/cards.png?raw=true "Cards")
+<img src="doc_snapshots/global_overview.png" width="250" height="auto" alt="Global overview"/>
+<img src="doc_snapshots/cards_view.png" width="250" height="auto" alt="Cards overview"/>
+<img src="doc_snapshots/inputs.png" width="250" height="auto" alt="Inputs overview"/>
+<img src="doc_snapshots/listview.png" width="250" height="auto" alt="ListView overview"/>
 
 
 ## Getting Started
