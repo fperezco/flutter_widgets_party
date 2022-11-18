@@ -9,7 +9,8 @@ Just playing with different widgets:
 - Sliders
 - ListViews and Infinite scrolls
 
-![Alt text](doc_snapshots/global_overview.png?raw=true "Widgets overview")
+![Widgets overview](doc_snapshots/global_overview.png?raw=true "Widgets")
+![cards overview](doc_snapshots/cards png?raw=true "Cards")
 
 ## Getting Started
 
